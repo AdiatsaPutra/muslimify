@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:muslim/models/al-quran.dart';
 import 'package:muslim/models/ayat_hari_ini.dart';
 import 'package:muslim/models/ayat_kursi.dart';
 import 'package:muslim/models/doa_harian.dart';
@@ -13,6 +14,20 @@ import 'package:muslim/models/asmaul_husna.dart';
 import 'package:muslim/models/wirid.dart';
 
 class ApiRepository {
+  static Future<AlQuran> getAlQuran() async {
+    String url =
+        'https://islamic-api-indonesia.herokuapp.com/api/data/json/quran';
+    try {
+      var response = await http.get(Uri.parse(url));
+      var json = jsonDecode(response.body);
+      var result = json['result']['data'];
+      print(result);
+      return AlQuran.fromJson(result);
+    } catch (e) {
+      throw Exception(e);
+    }
+  }
+
   int rand = Random().nextInt(6235) + 1;
   Future<AyatHariIni> getAyatHariIni() async {
     String url = 'https://api.alquran.cloud/ayah/';

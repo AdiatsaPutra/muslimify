@@ -10,6 +10,7 @@ import 'package:muslim/cubit/kisah_nabi_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';
 import 'package:muslim/cubit/wirid_cubit.dart';
 import 'package:muslim/presentation/pages/home_page.dart';
+import 'package:muslim/repository/api_repository.dart';
 
 void main() async {
   await GetStorage.init();
@@ -57,7 +58,7 @@ class Test extends StatelessWidget {
     return Scaffold(
       body: ElevatedButton(
         onPressed: () {
-          // MuslimDataSource.getDoaHarian();
+          ApiRepository.getAlQuran();
         },
         child: Text('Test'),
       ),

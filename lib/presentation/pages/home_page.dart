@@ -19,6 +19,7 @@ import 'package:muslim/presentation/widgets/category.dart';
 import 'package:muslim/presentation/widgets/quote_box.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -72,6 +73,45 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: List.generate(
+                                6,
+                                (index) => Padding(
+                                  padding: EdgeInsets.only(
+                                      left: (index == 0) ? 0 : 16),
+                                  child: InkWell(
+                                    onTap: () async {
+                                      await canLaunch(
+                                              'https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra1')
+                                          ? await launch(
+                                              'https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra1')
+                                          : throw 'Could not launch';
+                                    },
+                                    child: Container(
+                                      height: 70,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                          color: primaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
+                                          boxShadow: [
+                                            BoxShadow(
+                                                color: Colors.grey
+                                                    .withOpacity(0.1),
+                                                blurRadius: 30,
+                                                offset: Offset(1, 1))
+                                          ]),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 20,
+                          ),
                           InkWell(
                             onTap: () {
                               Get.to(() => KisahNabiPage());
