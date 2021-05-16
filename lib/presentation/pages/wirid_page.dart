@@ -55,7 +55,7 @@ class WiridPage extends StatelessWidget {
                             Container(
                               width: Get.width,
                               height: 2,
-                              color: primaryColor2,
+                              color: primaryColor2.withOpacity(0.5),
                             ),
                           ],
                         ),

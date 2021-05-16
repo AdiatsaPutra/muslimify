@@ -6,7 +6,7 @@ import 'package:muslim/repository/api_repository.dart';
 part 'image_state.dart';
 
 class ImageCubit extends Cubit<ImageState> {
-  final muslimRepository = APIRepository();
+  final muslimRepository = ApiRepository();
   ImageCubit() : super(ImageInitial());
 
   Future<void> getImage() async {

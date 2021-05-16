@@ -6,7 +6,7 @@ import 'package:muslim/repository/api_repository.dart';
 part 'quote_state.dart';
 
 class QuoteCubit extends Cubit<QuoteState> {
-  final muslimRepository = APIRepository();
+  final muslimRepository = ApiRepository();
   QuoteCubit() : super(QuoteInitial());
 
   Future<void> getQuote() async {

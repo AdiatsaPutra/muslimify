@@ -6,7 +6,7 @@ import 'package:muslim/repository/api_repository.dart';
 part 'ayat_hari_ini_state.dart';
 
 class AyatHariIniCubit extends Cubit<AyatHariIniState> {
-  final muslimRepository = APIRepository();
+  final muslimRepository = ApiRepository();
   AyatHariIniCubit() : super(AyatHariIniInitial());
 
   Future<void> getAyatHariIni() async {

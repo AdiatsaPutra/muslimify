@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:muslim/datasource/api_repository.dart';
 import 'package:muslim/models/ayat_kursi.dart';
+import 'package:muslim/repository/api_repository.dart';
 
 part 'ayat_kursi_state.dart';
 

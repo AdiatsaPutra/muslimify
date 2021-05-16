@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:muslim/datasource/api_repository.dart';
 import 'package:muslim/models/models.dart';
+import 'package:muslim/repository/api_repository.dart';
 
 part 'asmaul_husna_state.dart';
 
