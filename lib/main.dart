@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:muslim/cubit/asmaul_husna_cubit.dart';
+import 'package:muslim/cubit/ayat_hari_ini_cubit.dart';
+import 'package:muslim/cubit/ayat_kursi_cubit.dart';
+import 'package:muslim/cubit/image_cubit.dart';
+import 'package:muslim/cubit/kisah_nabi_cubit.dart';
+import 'package:muslim/cubit/quote_cubit.dart';
+import 'package:muslim/cubit/wirid_cubit.dart';
+import 'package:muslim/presentation/pages/home_page.dart';
+
+void main() async {
+  await GetStorage.init();
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AyatHariIniCubit()..getAyatHariIni(),
+        ),
+        BlocProvider(
+          create: (context) => ImageCubit()..getImage(),
+        ),
+        BlocProvider(
+          create: (context) => QuoteCubit()..getQuote(),
+        ),
+        BlocProvider(
+          create: (context) => WiridCubit()..getWirid(),
+        ),
+        BlocProvider(
+          create: (context) => AsmaulHusnaCubit()..getAsmaulHusna(),
+        ),
+        BlocProvider(
+          create: (context) => AyatKursiCubit()..getAyatKursi(),
+        ),
+        BlocProvider(
+          create: (context) => KisahNabiCubit()..getKisahNabi(),
+        ),
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomePage(),
+      ),
+    );
+  }
+}
+
+class Test extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ElevatedButton(
+        onPressed: () {
+          // MuslimDataSource.getDoaHarian();
+        },
+        child: Text('Test'),
+      ),
+    );
+  }
+}
