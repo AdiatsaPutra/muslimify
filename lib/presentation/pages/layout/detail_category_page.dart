@@ -6,7 +6,6 @@ class DetailCategoryPage extends StatelessWidget {
   final String text;
   final Widget? child;
   final Function? onBack;
-  final bool? isSearch;
 
   const DetailCategoryPage({
     Key? key,
@@ -14,7 +13,6 @@ class DetailCategoryPage extends StatelessWidget {
     required this.text,
     this.child,
     this.onBack,
-    this.isSearch = true,
   }) : super(key: key);
 
   @override
@@ -54,29 +52,6 @@ class DetailCategoryPage extends StatelessWidget {
                 SizedBox(
                   height: 30,
                 ),
-                (isSearch == true)
-                    ? TextField(
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide:
-                                BorderSide(width: 2, color: primaryColor),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(30),
-                            borderSide:
-                                BorderSide(width: 2, color: primaryColor),
-                          ),
-                          suffixIcon: Icon(Icons.search, color: primaryColor),
-                          labelText: 'Cari ${text}',
-                          labelStyle:
-                              blackTextRegular.copyWith(color: Colors.grey),
-                        ),
-                      )
-                    : Container(),
                 child ?? SizedBox()
               ],
             ),

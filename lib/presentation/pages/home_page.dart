@@ -73,6 +73,12 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(height: 20),
+                          Text(
+                            'Download Iqra',
+                            style: blackTextBold.copyWith(fontSize: 18),
+                          ),
+                          SizedBox(height: 20),
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             child: Row(
@@ -93,16 +99,9 @@ class HomePage extends StatelessWidget {
                                       height: 70,
                                       width: 70,
                                       decoration: BoxDecoration(
-                                          color: primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(50),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.grey
-                                                    .withOpacity(0.1),
-                                                blurRadius: 30,
-                                                offset: Offset(1, 1))
-                                          ]),
+                                        color: Colors.grey.withOpacity(0.5),
+                                        borderRadius: BorderRadius.circular(50),
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -174,7 +173,7 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 20,
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),

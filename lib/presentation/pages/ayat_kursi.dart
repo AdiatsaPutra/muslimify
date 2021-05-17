@@ -19,7 +19,6 @@ class AyatKursiPage extends StatelessWidget {
       onBack: () {
         Get.back();
       },
-      isSearch: false,
       child: BlocConsumer<AyatKursiCubit, AyatKursiState>(
         listener: (context, state) {
           if (state is AyatKursiError) {
