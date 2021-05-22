@@ -73,40 +73,12 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 20),
-                          Text(
-                            'Download Iqra',
-                            style: blackTextBold.copyWith(fontSize: 18),
+                          SizedBox(
+                            height: 20,
                           ),
-                          SizedBox(height: 20),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: List.generate(
-                                6,
-                                (index) => Padding(
-                                  padding: EdgeInsets.only(
-                                      left: (index == 0) ? 0 : 16),
-                                  child: InkWell(
-                                    onTap: () async {
-                                      await canLaunch(
-                                              'https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra1')
-                                          ? await launch(
-                                              'https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra1')
-                                          : throw 'Could not launch';
-                                    },
-                                    child: Container(
-                                      height: 70,
-                                      width: 70,
-                                      decoration: BoxDecoration(
-                                        color: Colors.grey.withOpacity(0.5),
-                                        borderRadius: BorderRadius.circular(50),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
+                          Text(
+                            'Kisah 25 Nabi dan Rasul',
+                            style: blackTextBold,
                           ),
                           SizedBox(
                             height: 20,
@@ -323,12 +295,12 @@ class HomePage extends StatelessWidget {
                                   ' ${tanggalHijriyah.longMonthName} '
                                   ' ${tanggalHijriyah.hYear} H  ',
                                   style:
-                                      blackTextRegular.copyWith(fontSize: 16),
+                                      blackTextRegular.copyWith(fontSize: 14),
                                 ),
                                 Text(
                                   tanggalIndonesia.yMMMMEEEEd(),
                                   style:
-                                      blackTextRegular.copyWith(fontSize: 16),
+                                      blackTextRegular.copyWith(fontSize: 14),
                                 ),
                               ],
                             ),
