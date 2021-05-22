@@ -11,27 +11,27 @@ const whiteColor = Color(0xFFFFFFFF);
 const darkColor = Color(0xFF1F2060);
 const blackColor = Color(0xFF1F1F1F);
 
-TextStyle whiteTextRegular = GoogleFonts.poppins(
+TextStyle whiteTextRegular = GoogleFonts.inter(
   textStyle: TextStyle(color: whiteColor, fontSize: 14, height: 1.5),
 );
-TextStyle whiteTextBold = GoogleFonts.poppins(
+TextStyle whiteTextBold = GoogleFonts.inter(
   textStyle: TextStyle(
       color: whiteColor,
       fontSize: 14,
       fontWeight: FontWeight.w700,
       height: 1.5),
 );
-TextStyle darkTextRegular = GoogleFonts.poppins(
+TextStyle darkTextRegular = GoogleFonts.inter(
   textStyle: TextStyle(color: darkColor, fontSize: 14, height: 1.5),
 );
-TextStyle darkTextBold = GoogleFonts.poppins(
+TextStyle darkTextBold = GoogleFonts.inter(
   textStyle: TextStyle(
       color: darkColor, fontSize: 14, fontWeight: FontWeight.w700, height: 1.5),
 );
-TextStyle blackTextRegular = GoogleFonts.poppins(
+TextStyle blackTextRegular = GoogleFonts.inter(
   textStyle: TextStyle(color: blackColor, fontSize: 16, height: 1.5),
 );
-TextStyle blackTextBold = GoogleFonts.poppins(
+TextStyle blackTextBold = GoogleFonts.inter(
   textStyle: TextStyle(
       color: blackColor,
       fontSize: 16,

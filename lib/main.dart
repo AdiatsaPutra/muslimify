@@ -45,6 +45,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: GetMaterialApp(
+        theme: ThemeData(canvasColor: Colors.transparent),
         debugShowCheckedModeBanner: false,
         home: HomePage(),
       ),
