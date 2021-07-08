@@ -63,55 +63,38 @@ class _AsmaulHusnaPageState extends State<AsmaulHusnaPage> {
                     itemCount: asmaulHusna.length,
                     itemBuilder: (context, index) {
                       if (asmaulHusnaSearch.text.isEmpty) {
-                        return Padding(
-                          padding: const EdgeInsets.all(24.0),
-                          child: Column(
+                        return Container(
+                          padding: const EdgeInsets.all(24),
+                          margin: const EdgeInsets.only(top: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: shadow,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Text(
-                                          asmaulHusna[index].arabic,
-                                          style:
-                                              GoogleFonts.amiri(fontSize: 30),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                        Text(
-                                          asmaulHusna[index].latin,
-                                          style:
-                                              GoogleFonts.amiri(fontSize: 18),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                        Text(
-                                          asmaulHusna[index].translationId,
-                                          style: blackTextRegular,
-                                          textAlign: TextAlign.right,
-                                        ),
-                                      ],
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      '${asmaulHusna[index].arabic} ',
+                                      style: GoogleFonts.amiri(fontSize: 30),
+                                      textAlign: TextAlign.right,
                                     ),
-                                  ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    asmaulHusna[index].index.toString(),
-                                    style: blackTextBold,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                width: Get.width,
-                                height: 2,
-                                color: primaryColor2,
+                                    Text(
+                                      '${asmaulHusna[index].latin} ',
+                                      style: GoogleFonts.amiri(fontSize: 20),
+                                      textAlign: TextAlign.right,
+                                    ),
+                                    Text(
+                                      '${asmaulHusna[index].translationId} ',
+                                      style: blackTextRegular,
+                                      textAlign: TextAlign.right,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -126,55 +109,41 @@ class _AsmaulHusnaPageState extends State<AsmaulHusnaPage> {
                               .contains(asmaulHusnaSearch.text)) {
                         return Padding(
                           padding: const EdgeInsets.all(24.0),
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Text(
-                                          asmaulHusna[index].arabic,
-                                          style:
-                                              GoogleFonts.amiri(fontSize: 30),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                        Text(
-                                          asmaulHusna[index].latin,
-                                          style:
-                                              GoogleFonts.amiri(fontSize: 18),
-                                          textAlign: TextAlign.right,
-                                        ),
-                                        Text(
-                                          asmaulHusna[index].translationId,
-                                          style: blackTextRegular,
-                                          textAlign: TextAlign.right,
-                                        ),
-                                      ],
-                                    ),
+                          child: Container(
+                            padding: const EdgeInsets.all(24),
+                            margin: const EdgeInsets.only(top: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: shadow,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        '${asmaulHusna[index].arabic} ',
+                                        style: GoogleFonts.amiri(fontSize: 30),
+                                        textAlign: TextAlign.right,
+                                      ),
+                                      Text(
+                                        '${asmaulHusna[index].latin} ',
+                                        style: GoogleFonts.amiri(fontSize: 20),
+                                        textAlign: TextAlign.right,
+                                      ),
+                                      Text(
+                                        '${asmaulHusna[index].translationId} ',
+                                        style: blackTextRegular,
+                                        textAlign: TextAlign.right,
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(
-                                    width: 20,
-                                  ),
-                                  Text(
-                                    asmaulHusna[index].index.toString(),
-                                    style: blackTextBold,
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                width: Get.width,
-                                height: 2,
-                                color: primaryColor2,
-                              ),
-                            ],
+                                ),
+                              ],
+                            ),
                           ),
                         );
                       } else {

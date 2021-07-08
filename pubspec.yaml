@@ -28,13 +28,12 @@ dependencies:
   flutter_bloc: ^7.0.0
   flutter_qiblah: ^2.0.0
   flutter_spinkit: ^5.0.0
-  format_indonesia: ^0.1.0
   geolocator: ^7.0.3
   get: ^4.1.4
   get_storage: ^2.0.2
   google_fonts: ^2.0.0
-  hijri: ^2.0.3
   http: ^0.13.1
+  line_icons: ^2.0.1
   shimmer: ^2.0.0
   url_launcher: ^6.0.3
 

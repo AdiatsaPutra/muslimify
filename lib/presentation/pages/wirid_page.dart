@@ -31,8 +31,14 @@ class WiridPage extends StatelessWidget {
               shrinkWrap: true,
               itemCount: wirid.length,
               itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.all(24.0),
+                return Container(
+                  padding: const EdgeInsets.all(24),
+                  margin: const EdgeInsets.only(top: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: shadow,
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -48,14 +54,6 @@ class WiridPage extends StatelessWidget {
                             Text(
                               '(dibaca ${wirid[index].times} kali)',
                               style: blackTextRegular,
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              width: Get.width,
-                              height: 2,
-                              color: primaryColor2.withOpacity(0.5),
                             ),
                           ],
                         ),
