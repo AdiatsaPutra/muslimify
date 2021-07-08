@@ -4,9 +4,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim/cubit/ayat_kursi_cubit.dart';
-import 'package:muslim/cubit/wirid_cubit.dart';
 import 'package:muslim/models/ayat_kursi.dart';
-import 'package:muslim/models/wirid.dart';
 import 'package:muslim/presentation/pages/layout/detail_category_page.dart';
 import 'package:muslim/presentation/utils/theme.dart';
 
@@ -14,8 +12,8 @@ class AyatKursiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DetailCategoryPage(
-      pageTitle: 'AyatKursi',
-      text: 'AyatKursi',
+      pageTitle: 'Ayat Kursi',
+      text: 'Ayat Kursi',
       onBack: () {
         Get.back();
       },

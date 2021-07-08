@@ -16,7 +16,10 @@ class QuoteBox extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             image: DecorationImage(
-                image: NetworkImage(imageUrl), fit: BoxFit.cover),
+              image: NetworkImage(imageUrl),
+              fit: BoxFit.cover,
+            ),
+            boxShadow: shadow,
           ),
         ),
         Stack(

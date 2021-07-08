@@ -8,21 +8,19 @@ class RandomAyat extends StatelessWidget {
   const RandomAyat({Key? key, required this.ayat}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 10,
+    return Column(
+      children: [
+        Text(
+          ayat,
+          textAlign: TextAlign.right,
+          style: GoogleFonts.amiri(
+            fontSize: 30,
+            color: blackColor,
+            height: 2.3,
+            fontWeight: FontWeight.bold,
           ),
-          Text(
-            ayat,
-            textAlign: TextAlign.right,
-            style:
-                GoogleFonts.amiri(fontSize: 24, color: blackColor, height: 2.3),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

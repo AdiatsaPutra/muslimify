@@ -11,30 +11,44 @@ const whiteColor = Color(0xFFFFFFFF);
 const darkColor = Color(0xFF1F2060);
 const blackColor = Color(0xFF1F1F1F);
 
-TextStyle whiteTextRegular = GoogleFonts.inter(
+TextStyle whiteTextRegular = GoogleFonts.poppins(
   textStyle: TextStyle(color: whiteColor, fontSize: 14, height: 1.5),
 );
-TextStyle whiteTextBold = GoogleFonts.inter(
+
+TextStyle whiteTextBold = GoogleFonts.poppins(
   textStyle: TextStyle(
       color: whiteColor,
       fontSize: 14,
       fontWeight: FontWeight.w700,
       height: 1.5),
 );
-TextStyle darkTextRegular = GoogleFonts.inter(
+
+TextStyle darkTextRegular = GoogleFonts.poppins(
   textStyle: TextStyle(color: darkColor, fontSize: 14, height: 1.5),
 );
-TextStyle darkTextBold = GoogleFonts.inter(
+
+TextStyle darkTextBold = GoogleFonts.poppins(
   textStyle: TextStyle(
       color: darkColor, fontSize: 14, fontWeight: FontWeight.w700, height: 1.5),
 );
-TextStyle blackTextRegular = GoogleFonts.inter(
+
+TextStyle blackTextRegular = GoogleFonts.poppins(
   textStyle: TextStyle(color: blackColor, fontSize: 16, height: 1.5),
 );
-TextStyle blackTextBold = GoogleFonts.inter(
+
+TextStyle blackTextBold = GoogleFonts.poppins(
   textStyle: TextStyle(
       color: blackColor,
       fontSize: 16,
       fontWeight: FontWeight.w700,
       height: 1.5),
 );
+
+List<BoxShadow> shadow = [
+  BoxShadow(
+    blurRadius: 10,
+    color: Colors.grey.withOpacity(0.1),
+    offset: Offset(2, 3),
+    spreadRadius: 10,
+  ),
+];

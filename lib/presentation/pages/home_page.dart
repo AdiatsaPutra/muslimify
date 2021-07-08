@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:format_indonesia/format_indonesia.dart';
-import 'package:hijri/hijri_calendar.dart';
+// import 'package:format_indonesia/format_indonesia.dart';
+// import 'package:hijri/hijri_calendar.dart';
 import 'package:muslim/cubit/ayat_hari_ini_cubit.dart';
 import 'package:muslim/cubit/image_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';
@@ -19,13 +19,12 @@ import 'package:muslim/presentation/widgets/category.dart';
 import 'package:muslim/presentation/widgets/quote_box.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var tanggalHijriyah = HijriCalendar.now();
-    var tanggalIndonesia = Waktu();
+    // var tanggalHijriyah = HijriCalendar.now();
+    // var tanggalIndonesia = Waktu();
     return Scaffold(
       backgroundColor: backgroundColor,
       body: SafeArea(
@@ -120,84 +119,9 @@ class HomePage extends StatelessWidget {
                                 ],
                               ),
                               decoration: BoxDecoration(
-                                color: primaryColor,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Align(
-                            alignment: Alignment.centerLeft,
-                            child: Row(
-                              children: [
-                                Text(
-                                  '1 Hari 1 Ayat ',
-                                  style: blackTextBold.copyWith(fontSize: 16),
-                                ),
-                                Text(
-                                  '(Scroll ayat jika tidak muat)',
-                                  style: blackTextRegular.copyWith(
-                                      color: Colors.grey[800], fontSize: 12),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 10),
-                            child:
-                                BlocBuilder<AyatHariIniCubit, AyatHariIniState>(
-                              builder: (context, state) {
-                                if (state is AyatHariIniLoaded) {
-                                  AyatHariIni ayatHariIni = state.ayatHariIni;
-                                  return Container(
-                                    height: 150,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFD0CA9D),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
-                                    child: Center(
-                                      child: SingleChildScrollView(
-                                        physics: BouncingScrollPhysics(),
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(margin),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: RandomAyat(
-                                                  ayat: ayatHariIni.ayat,
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                } else if (state is AyatHariIniError) {
-                                  return Text(state.message);
-                                } else {
-                                  return Shimmer.fromColors(
-                                      child: Container(
-                                        height: 150,
-                                        decoration: BoxDecoration(
-                                          color: Colors.grey,
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                        ),
-                                      ),
-                                      baseColor: Colors.grey.withOpacity(0.1),
-                                      highlightColor: Colors.white);
-                                }
-                              },
+                                  color: primaryColor,
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: shadow),
                             ),
                           ),
                           SizedBox(
@@ -251,73 +175,65 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 80),
-                child: Container(
-                  height: 150,
-                  margin: EdgeInsets.symmetric(horizontal: margin),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2), blurRadius: 30),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(margin),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                padding: const EdgeInsets.fromLTRB(20, 80, 20, 0),
+                child: BlocBuilder<AyatHariIniCubit, AyatHariIniState>(
+                  builder: (context, state) {
+                    if (state is AyatHariIniLoaded) {
+                      AyatHariIni ayatHariIni = state.ayatHariIni;
+                      return Container(
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: shadow,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Selamat datang,',
-                                  style:
-                                      blackTextRegular.copyWith(fontSize: 16),
-                                ),
-                                Text(
-                                  'User',
-                                  style: blackTextBold.copyWith(fontSize: 18),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.symmetric(vertical: 10),
-                                  height: 1,
-                                  width: Get.width / 1.5,
-                                  color: Colors.grey.withOpacity(0.3),
-                                ),
-                                Text(
-                                  '${tanggalHijriyah.hDay} '
-                                  ' ${tanggalHijriyah.longMonthName} '
-                                  ' ${tanggalHijriyah.hYear} H  ',
-                                  style:
-                                      blackTextRegular.copyWith(fontSize: 14),
-                                ),
-                                Text(
-                                  tanggalIndonesia.yMMMMEEEEd(),
-                                  style:
-                                      blackTextRegular.copyWith(fontSize: 14),
-                                ),
-                              ],
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                  'Satu hari satu ayat (scroll jika tidak muat)',
+                                  style: blackTextRegular),
                             ),
-                            Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage('assets/1.png'),
+                            Expanded(
+                              child: SingleChildScrollView(
+                                physics: BouncingScrollPhysics(),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(margin),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: RandomAyat(
+                                          ayat: ayatHariIni.ayat,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            )
+                            ),
                           ],
                         ),
-                      ),
-                    ],
-                  ),
+                      );
+                    } else if (state is AyatHariIniError) {
+                      return Text(state.message);
+                    } else {
+                      return Container(
+                        height: 150,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: SpinKitFadingCircle(
+                          color: primaryColor,
+                        ),
+                      );
+                    }
+                  },
                 ),
               ),
             ],
