@@ -9,7 +9,7 @@ import 'package:muslim/cubit/image_cubit.dart';
 import 'package:muslim/cubit/kisah_nabi_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';
 import 'package:muslim/cubit/wirid_cubit.dart';
-import 'package:muslim/presentation/pages/home_page.dart';
+import 'package:muslim/presentation/pages/main_page.dart';
 import 'package:muslim/repository/api_repository.dart';
 
 void main() async {
@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         theme: ThemeData(canvasColor: Colors.transparent),
         debugShowCheckedModeBanner: false,
-        home: HomePage(),
+        home: MainPage(),
       ),
     );
   }

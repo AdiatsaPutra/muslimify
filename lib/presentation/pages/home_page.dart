@@ -240,19 +240,6 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: primaryColor,
-        selectedLabelStyle: blackTextRegular.copyWith(
-          color: primaryColor,
-        ),
-        unselectedLabelStyle: whiteTextRegular,
-        items: [
-          BottomNavigationBarItem(icon: LineIcon.home(), label: 'Home'),
-          BottomNavigationBarItem(icon: LineIcon.heart(), label: 'Favorit'),
-          BottomNavigationBarItem(icon: LineIcon.adjust(), label: 'Setting'),
-        ],
-      ),
     );
   }
 }

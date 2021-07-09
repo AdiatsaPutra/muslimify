@@ -19,14 +19,14 @@ class RandomAyat extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
             children: [
               Text(
                 ayat,
                 textAlign: TextAlign.right,
                 style: GoogleFonts.amiri(
-                  fontSize: 27,
+                  fontSize: 25,
                   color: whiteColor,
                   height: 2.3,
                   fontWeight: FontWeight.bold,
@@ -38,6 +38,9 @@ class RandomAyat extends StatelessWidget {
                 style: whiteTextBold.copyWith(
                   fontSize: 17,
                 ),
+              ),
+              SizedBox(
+                height: 10,
               ),
             ],
           ),
