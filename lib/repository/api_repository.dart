@@ -108,6 +108,7 @@ class ApiRepository {
       if (response.statusCode == 200) {
         var json = jsonDecode(response.body);
         List result = json['result']['data'];
+        print(result);
         return result.map((e) => Tahlil.fromJson(e)).toList();
       } else {
         return [];

@@ -9,11 +9,14 @@ import 'package:muslim/cubit/ayat_kursi_cubit.dart';
 import 'package:muslim/cubit/image_cubit.dart';
 import 'package:muslim/cubit/kisah_nabi_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';
+import 'package:muslim/cubit/tahlil_cubit.dart';
 import 'package:muslim/cubit/wirid_cubit.dart';
 import 'package:muslim/models/al-quran.dart';
 import 'package:muslim/presentation/pages/home_page.dart';
 import 'package:muslim/presentation/pages/main_page.dart';
 import 'package:muslim/repository/api_repository.dart';
+
+import 'models/tahlil.dart';
 
 void main() async {
   await GetStorage.init();
@@ -49,6 +52,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => KisahNabiCubit()..getKisahNabi(),
         ),
+        BlocProvider(
+          create: (context) => TahlilCubit()..getTahlil(),
+        ),
       ],
       child: GetMaterialApp(
         theme: ThemeData(canvasColor: Colors.transparent),
@@ -64,7 +70,7 @@ class Test extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Text('Test'),
+      body: Text(''),
     );
   }
 }
