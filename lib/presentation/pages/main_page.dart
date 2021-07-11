@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icon.dart';
+import 'package:muslim/presentation/pages/al-quran_page.dart';
 import 'package:muslim/presentation/pages/settings_page.dart';
 import 'package:muslim/presentation/presentation.dart';
 import 'package:muslim/presentation/utils/theme.dart';
@@ -13,7 +14,7 @@ class _MainPageState extends State<MainPage> {
   int selectedIndex = 0;
   List<Widget> pages = [
     HomePage(),
-    SettingsPage(),
+    AlQuranPage(),
     SettingsPage(),
   ];
   @override
@@ -37,7 +38,7 @@ class _MainPageState extends State<MainPage> {
         unselectedLabelStyle: whiteTextRegular,
         items: [
           BottomNavigationBarItem(icon: LineIcon.home(), label: 'Home'),
-          BottomNavigationBarItem(icon: LineIcon.heart(), label: 'Favorit'),
+          BottomNavigationBarItem(icon: LineIcon.quran(), label: 'Al-Quran'),
           BottomNavigationBarItem(icon: LineIcon.adjust(), label: 'Setting'),
         ],
       ),

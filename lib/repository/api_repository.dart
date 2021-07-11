@@ -14,15 +14,15 @@ import 'package:muslim/models/asmaul_husna.dart';
 import 'package:muslim/models/wirid.dart';
 
 class ApiRepository {
-  static Future<AlQuran> getAlQuran() async {
-    String url =
-        'https://islamic-api-indonesia.herokuapp.com/api/data/json/quran';
+  Future<List<AlQuran>> getAlQuran() async {
+    String url = 'https://api-alquranid.herokuapp.com/surah';
     try {
       var response = await http.get(Uri.parse(url));
+      print('coba');
       var json = jsonDecode(response.body);
-      var result = json['result']['data'];
+      List result = json['data'];
       print(result);
-      return AlQuran.fromJson(result);
+      return result.map((e) => AlQuran.fromJson(e)).toList();
     } catch (e) {
       throw Exception(e);
     }
@@ -35,6 +35,7 @@ class ApiRepository {
       var response = await http.get(Uri.parse(url + rand.toString()));
       var json = jsonDecode(response.body);
       var result = json['data'];
+      print(result);
       return AyatHariIni.fromJson(result);
     } catch (e) {
       throw Exception(e);

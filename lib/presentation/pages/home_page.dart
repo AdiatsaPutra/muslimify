@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:line_icons/line_icon.dart';
 import 'package:muslim/cubit/ayat_hari_ini_cubit.dart';
 import 'package:muslim/cubit/image_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';

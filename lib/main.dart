@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:muslim/cubit/al_quran_cubit.dart';
 import 'package:muslim/cubit/asmaul_husna_cubit.dart';
 import 'package:muslim/cubit/ayat_hari_ini_cubit.dart';
 import 'package:muslim/cubit/ayat_kursi_cubit.dart';
@@ -9,6 +10,8 @@ import 'package:muslim/cubit/image_cubit.dart';
 import 'package:muslim/cubit/kisah_nabi_cubit.dart';
 import 'package:muslim/cubit/quote_cubit.dart';
 import 'package:muslim/cubit/wirid_cubit.dart';
+import 'package:muslim/models/al-quran.dart';
+import 'package:muslim/presentation/pages/home_page.dart';
 import 'package:muslim/presentation/pages/main_page.dart';
 import 'package:muslim/repository/api_repository.dart';
 
@@ -22,6 +25,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider(
+          create: (context) => AlQuranCubit()..getAlQuran(),
+        ),
         BlocProvider(
           create: (context) => AyatHariIniCubit()..getAyatHariIni(),
         ),
@@ -57,12 +63,8 @@ class Test extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(
-        onPressed: () {
-          ApiRepository.getAlQuran();
-        },
-        child: Text('Test'),
-      ),
+      backgroundColor: Colors.white,
+      body: Text('Test'),
     );
   }
 }
