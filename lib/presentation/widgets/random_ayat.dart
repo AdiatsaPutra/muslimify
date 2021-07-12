@@ -35,8 +35,8 @@ class RandomAyat extends StatelessWidget {
               Text(
                 'QS. ${surah} ayat ${ayatKe}',
                 textAlign: TextAlign.end,
-                style: whiteTextBold.copyWith(
-                  fontSize: 17,
+                style: whiteTextRegular.copyWith(
+                  fontSize: 14,
                 ),
               ),
               SizedBox(

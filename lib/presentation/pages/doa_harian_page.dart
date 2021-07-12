@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim/cubit/doa_harian_cubit.dart';
 import 'package:muslim/models/models.dart';
 import 'package:muslim/presentation/pages/layout/detail_category_page.dart';
@@ -41,10 +42,30 @@ class DoaHarianPage extends StatelessWidget {
                           boxShadow: shadow,
                         ),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(doaHarian[index].arabic),
-                            Text(doaHarian[index].title),
-                            Text(doaHarian[index].translation),
+                            Text(
+                              doaHarian[index].title,
+                              style: blackTextBold,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  doaHarian[index].arabic,
+                                  style: GoogleFonts.amiri(
+                                    fontSize: 23,
+                                    height: 2.3,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  textAlign: TextAlign.end,
+                                ),
+                                Text(
+                                  doaHarian[index].translation,
+                                  style: blackTextRegular,
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:muslim/presentation/utils/theme.dart';
 
 class QuoteBox extends StatelessWidget {
@@ -40,8 +41,10 @@ class QuoteBox extends StatelessWidget {
               child: Text(
                 text,
                 textAlign: TextAlign.center,
-                style: whiteTextRegular.copyWith(
-                    fontSize: 16, fontWeight: FontWeight.bold),
+                style: GoogleFonts.lora(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
